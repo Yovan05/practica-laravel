@@ -15,19 +15,20 @@ Route::get('posts/create', [PostController::class, 'create']);
 Route::get('posts/{post}', [PostController::class, 'show']);
 
 Route::get('prueba', function(){
-    /*
-        crear un registro
-        $post = new Post;
+    
+    //   crear un registro
+    /*    $post = new Post;
 
-        $post->title = 'Titulo de prueba 1';
-        $post->content = 'Contenido de prueba 1';
-        $post->category = 'Categoria de prueba 1';
+        $post->title = 'TITULo de prueba 5';
+        $post->content = 'Contenido de prueba 5';
+        $post->category = 'Categoria de prueba 5';
 
         $post->save();
-    */
-    //return $post;
+    
+    return $post;*/
 
-    //$post = Post::find(2); //metodo para buscar
+    $post = Post::find(5); //metodo para buscar
+    return $post;
     //metodo para buscar mediante cualquier columna, solo trae l primer registro que coincida
     /*$post = Post::where('title', 'Titulo de prueba 1')->first(); 
     $post->category = 'Desarrollo web';
