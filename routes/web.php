@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
+use App\Models\Post;
 
 //Importa el orden en que ponga las rutas en este archivo, ya que el servidor lo leera de arriba hacia abajo
 
@@ -12,6 +13,45 @@ Route::get('/', HomeController::class);
 Route::get('/posts',[PostController::class, 'index']);
 Route::get('posts/create', [PostController::class, 'create']);
 Route::get('posts/{post}', [PostController::class, 'show']);
+
+Route::get('prueba', function(){
+    /*
+        crear un registro
+        $post = new Post;
+
+        $post->title = 'Titulo de prueba 1';
+        $post->content = 'Contenido de prueba 1';
+        $post->category = 'Categoria de prueba 1';
+
+        $post->save();
+    */
+    //return $post;
+
+    //$post = Post::find(2); //metodo para buscar
+    //metodo para buscar mediante cualquier columna, solo trae l primer registro que coincida
+    /*$post = Post::where('title', 'Titulo de prueba 1')->first(); 
+    $post->category = 'Desarrollo web';
+    $post->save();
+    */
+
+    //metodo para obtener todos los registros
+    //$posts = Post::all();
+
+    //metodo para obtener mas de un registro
+    //$posts = Post::where('id','>=',2)->get();
+
+    //metodo para obtener registros de forma ordenada
+    /*$posts = Post::orderBy('category', 'asc')
+        ->select('id','category') //Especifica que columnas obtener
+        ->take(2) //indica la cantidad de registros que quieres
+        ->get();
+    */
+
+    //metodo para eliminar registro
+    /*$post = Post::find(1);
+    $post->delete();
+    return "Eliminado correctamente";*/
+});
 
 //Esto es para tener rutas dinamicas
 /*Route::get('/posts/{post}', function ($post){
