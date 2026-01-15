@@ -26,9 +26,9 @@ Route::get('prueba', function(){
         $post->save();
     
     return $post;*/
-
+    /*
     $post = Post::find(5); //metodo para buscar
-    return $post;
+    return $post;*/
     //metodo para buscar mediante cualquier columna, solo trae l primer registro que coincida
     /*$post = Post::where('title', 'Titulo de prueba 1')->first(); 
     $post->category = 'Desarrollo web';
@@ -52,6 +52,15 @@ Route::get('prueba', function(){
     /*$post = Post::find(1);
     $post->delete();
     return "Eliminado correctamente";*/
+
+    //Estos metodos solo funcionan con el created_at y updated_at, no con otros campos aunque sean de fecha
+    //Para que funcione con otros campos, se debe de cambiar el tipo de dato en el archivo modelo
+    //$post = Post::find(2);
+    //return $post->created_at->format('d-m-Y');
+    //return $post->published_at->diffForHumans();
+
+    $post = Post::find(1);
+    dd($post->is_active);
 });
 
 //Esto es para tener rutas dinamicas

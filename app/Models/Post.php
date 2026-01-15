@@ -29,4 +29,12 @@ class Post extends Model
             }
         );
     }
+
+    protected function casts(): array{
+        return [
+            'published_at' => 'datetime',
+            'is_active' => 'boolean',
+        ];
+    }
+
 }
