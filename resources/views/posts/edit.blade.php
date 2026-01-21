@@ -2,32 +2,33 @@
 
     <h1>Aqui se mostrara el formulario</h1>
 
-    <form action="/posts/create" method="POST">
+    <form action="/posts/{{$post->id}}" method="POST">
         @csrf
+        @method('PUT')
 
         <label>
             Titulo:
-            <input type="text" name="title">
+            <input type="text" name="title" value="{{$post->title}}">
         </label>
 
         <br>
 
         <label>
             Categoria:
-            <input type="text" name="category">
+            <input type="text" name="category" value="{{$post->category}}">
         </label>
 
         <br>
 
         <label>
             Contenido: 
-            <textarea name="content"></textarea>
+            <textarea name="content" >{{$post->content}}</textarea>
         </label>
 
         <br>
 
         <button type="submit">
-            Crear post
+            Actualizar post
         </button>
     </form>
 

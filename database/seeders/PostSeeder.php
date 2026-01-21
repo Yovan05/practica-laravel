@@ -24,7 +24,7 @@ class PostSeeder extends Seeder
         $post->save();
 
         $post = new Post();
-        
+
         $post->title = 'Post 2';
         $post->content ='Content 2';
         $post->category = 'Category 2';

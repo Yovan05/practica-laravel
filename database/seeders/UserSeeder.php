@@ -28,5 +28,8 @@ class UserSeeder extends Seeder
         $user->password = bcrypt('12345');
 
         $user->save();
+
+        //Crea usuarios aleatorios, el 10 indica la cantidad de registros
+        User::factory(10)->create();
     }
 }
