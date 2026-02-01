@@ -9,7 +9,7 @@ use App\Models\Post;
 
 //Cuando el controlador solo tiene un metodo, se le asigna el nombre de __invoke al metodo y no es necesario especificar el metodo
 Route::get('/', HomeController::class);
-
+/*
 Route::get('/posts',[PostController::class, 'index'])->name('posts.index');
 Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
 Route::post('posts/create', [PostController::class, 'store'])->name('posts.store');
@@ -17,6 +17,22 @@ Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show')
 Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
 Route::put('/posts/{post}', [PostController::class, 'update'])->name('posts.update');
 Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
+*/
+
+//Esta ruta crea todas las rutas del CRUD siempre y cuando los metodos ya esten hechos en el controlador
+//Dichas rutas que crea, son las misma que estan comentadas arriba, ahorra mucho codigo
+//el metodod ->except, es para que no se cree una ruta
+//el metodo ->only, sirve para que solo se creen las rutas que especifiques
+//el metodo ->parameters, es para indicarle el nombre que queremos que tengan lo que va dentro del {}, si no se indica, se pondra el nombre asignado en singular
+//
+Route::resource('articulos', PostController::class)
+    ->parameters(['articulos' => 'post'])
+    ->names('posts');
+
+//si en vez de usar resource, usamos apiResourse, se crearan solo las rutas de la api
+//es decir, no se crearan las rutas que te llevan a la vista, solo las funcionales
+
+
 
 Route::get('prueba', function(){
     
