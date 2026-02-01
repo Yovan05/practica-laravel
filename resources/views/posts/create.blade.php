@@ -2,7 +2,7 @@
 
     <h1>Aqui se mostrara el formulario</h1>
 
-    <form action="/posts/create" method="POST">
+    <form action="{{route('posts.store')}}" method="POST">
         @csrf
 
         <label>
