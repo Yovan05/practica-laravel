@@ -14,6 +14,13 @@
         <br>
 
         <label>
+            Slug:
+            <input type="text" name="slug" value="{{$post->slug}}">
+        </label>
+
+        <br>
+
+        <label>
             Categoria:
             <input type="text" name="category" value="{{$post->category}}">
         </label>
