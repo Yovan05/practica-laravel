@@ -2,7 +2,7 @@
 
     <h1>Aqui se mostrara el formulario</h1>
 
-    <form action="/posts/{{$post->id}}" method="POST">
+    <form action="{{route('posts.update', $post)}}" method="POST">
         @csrf
         @method('PUT')
 
