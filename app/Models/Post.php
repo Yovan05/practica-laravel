@@ -15,6 +15,22 @@ class Post extends Model
     //indicamos el nombre de la tabla
     protected $table = 'posts';
 
+    //Seleccionas las columnas que se van a poder editar
+    protected $fillable = [
+        'title',
+        'slug',
+        'category',
+        'content',
+    ];
+
+    //Seleccionas las columnas que no quieres que el usuario pueda editar
+    /*protected $guarded = [
+        'is_active',
+    ];*/
+
+
+
+
     protected function title():Attribute{
         return Attribute::make(
             //El metodo set lo ejecuta antes de guardarlo en la base de datos
