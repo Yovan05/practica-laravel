@@ -32,12 +32,12 @@ class StorePostRequest extends FormRequest
         ];
     }
 
-    //sirve para cambiar los mensajes de errores
-    public function messages(){
+    //sirve para poner mensajes personalizados
+    /*public function messages(){
         return [
             'title.required' => 'El :attribute es requerido conchesumadre'
         ];
-    }
+    }*/
 
     //sirve para cambiar el nombre de la columna que aparece en el mensaje de error
     public function attributes(){

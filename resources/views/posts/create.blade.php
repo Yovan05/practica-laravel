@@ -2,6 +2,8 @@
 
     <h1>Aqui se mostrara el formulario</h1>
 
+    {{__('Client Closed Request')}}
+
     {{--@if ($errors->any())
     
         <div>
